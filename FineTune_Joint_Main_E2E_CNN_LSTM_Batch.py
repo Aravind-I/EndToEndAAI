@@ -40,8 +40,9 @@ def preemphasis(signal, coeff=0.97):
 
 
 def Relu_log(In):
-    Out_relu=tf.nn.relu(np.abs(In))
-    Out_log=tf.log(Out_relu+0.01)
+    In_abs=np.abs(In)
+    Out_log=tf.log(In_abs+0.01)
+    #Out_relu=tf.nn.relu(np.abs(Out_log))# Commenting ==>linear activation
     return Out_log
 
 Wav_Fs=8000
